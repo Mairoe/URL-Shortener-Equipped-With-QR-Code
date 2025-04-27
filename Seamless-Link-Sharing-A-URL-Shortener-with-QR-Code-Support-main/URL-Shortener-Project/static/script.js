@@ -41,7 +41,7 @@ function generateQR(shortURL = null) {
   fetch("/generate_qr", {
     method: "POST",
     headers: { "Content-Type": "application/json" },
-    body: JSON.stringify({ url: shortURL }), // 🔹 Ensure this matches Flask
+    body: JSON.stringify({ url: shortURL }),
   })
     .then((response) => response.json())
     .then((data) => {
@@ -49,13 +49,19 @@ function generateQR(shortURL = null) {
       if (data.error) {
         alert(data.error);
       } else {
-        document.getElementById("qr-image").src = data.qr_code;
-        document.getElementById("qr-popup").style.display = "block";
+        const qrPopup = document.getElementById("qr-popup");
+        const qrImage = document.getElementById("qr-image");
+        
+        qrImage.src = data.qr_code;
+        qrPopup.classList.remove("hidden");
       }
     })
-    .catch((error) => console.error("Error:", error));
+    .catch((error) => {
+      console.error("Error:", error);
+      alert("Failed to generate QR code. Please try again.");
+    });
 }
 
 function closePopup() {
-  document.getElementById("qr-popup").style.display = "none";
+  document.getElementById("qr-popup").classList.add("hidden");
 }
