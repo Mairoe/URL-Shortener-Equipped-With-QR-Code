@@ -1,0 +1,5 @@
+flask==2.3.3
+werkzeug==2.3.7
+qrcode==7.3.1
+Pillow==10.2.0
+flask-cors==3.0.10
