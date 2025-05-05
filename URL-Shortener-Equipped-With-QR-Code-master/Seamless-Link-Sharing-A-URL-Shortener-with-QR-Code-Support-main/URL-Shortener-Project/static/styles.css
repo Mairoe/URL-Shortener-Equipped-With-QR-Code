@@ -1,0 +1,74 @@
+h1 {
+  font: bolder;
+  font-family: Arial, Helvetica, sans-serif;
+}
+body {
+  font-family: Arial, sans-serif;
+  background-color: #1e1c1f;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+}
+
+.container {
+  background: rgba(184, 100, 239, 0.575);
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+input {
+  width: 100%;
+  padding: 5px;
+  margin: 10px 0;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.button-group {
+  display: flex;
+  justify-content: space-around;
+}
+
+button {
+  padding: 10px 15px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  background-color: #4caf50;
+  color: white;
+  transition: 0.3s;
+}
+
+button:hover {
+  background-color: #45a049;
+}
+
+#qr-popup {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: white;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  z-index: 1000;
+}
+
+#qr-popup.hidden {
+  display: none;
+}
+
+#qr-image {
+  max-width: 300px;
+  height: auto;
+  margin: 10px 0;
+}
+
+.hidden {
+  display: none;
+}
