@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>URL Shortener</title>
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='styles.css') }}"
+    />
+    <script src="{{ url_for('static', filename='script.js') }}" defer></script>
+  </head>
+  <body>
+    <div class="container">
+      <h1>URL Shortener</h1>
+      <input type="text" id="url" placeholder="Enter URL" />
+      <input type="text" id="alias" placeholder="Custom Alias (optional)" />
+      <div class="button-group">
+        <button onclick="shortenURL()">Shorten URL</button>
+        <button id="qr-btn" onclick="generateQR()">Generate QR Code</button>
+      </div>
+      <div id="result"></div>
+      <div id="qr-popup" class="hidden">
+        <span onclick="closePopup()">&times;</span>
+        <img id="qr-image" src="" alt="QR Code" />
+      </div>
+      <div id="qrcode"></div>
+    </div>
+  </body>
+</html>
